@@ -1,2 +1,2 @@
-# JECT-4th-FE
+# JECT-4th-Client
 ject 4th frontend repository
