@@ -1,2 +1,2 @@
-# JECT-4th-Client
+# Inflace-4th-Client
 ject 4th frontend repository
