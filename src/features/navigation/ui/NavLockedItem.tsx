@@ -1,31 +1,32 @@
 import { SidebarMenuItem, SidebarMenuButton } from '@/shared/ui/sidebar'
 import { SidebarIcon } from '@/shared/ui/sidebarIcon'
 import type { NavItem } from '../config'
-import { NavLockedItem } from './NavLockedItem'
 import Link from 'next/link'
 
-interface NavMenuItemProps {
+interface LockedNavItemProps {
   item: NavItem
-  locked?: boolean
 }
 
-export const NavMenuItem = ({ item, locked = false }: NavMenuItemProps) => {
-  if (locked) return <NavLockedItem item={item} />
-
+export const NavLockedItem = ({ item }: LockedNavItemProps) => {
   return (
     <SidebarMenuItem>
       <SidebarMenuButton>
         <Link
           href={item.url}
-          className='flex items-center justify-between gap-8'>
+          className='flex w-full items-center justify-between gap-8'>
           {item.icon && (
             <SidebarIcon
               name={item.icon}
-              className='[&>path]:fill-current'
+              className='transition-colors [&>path]:fill-current'
               size={20}
             />
           )}
           <span>{item.title}</span>
+          <SidebarIcon
+            name={'lock'}
+            className='ml-auto shrink-0 text-[var(--color-text-and-icon-secondary)]'
+            size={16}
+          />
         </Link>
       </SidebarMenuButton>
     </SidebarMenuItem>
