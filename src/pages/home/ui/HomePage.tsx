@@ -1,130 +1,22 @@
-import { NavigateToLoginButton } from '@/features/navigate-to-login'
+'use client'
+
+import { useEffect } from 'react'
+import { Landing } from '@/widgets/landing'
 
 export default function HomePage() {
+  useEffect(() => {
+    document.documentElement.classList.add('snap-landing')
+    const footer = document.querySelector('footer')
+    footer?.classList.add('snap-start')
+    return () => {
+      document.documentElement.classList.remove('snap-landing')
+      footer?.classList.remove('snap-start')
+    }
+  }, [])
+
   return (
     <>
-      <div className='flex w-full flex-col'>
-        안녕하세요?
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        안녕하세요?
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        안녕하세요?
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        안녕하세요?
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        안녕하세요?
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        안녕하세요?
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        안녕하세요?
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
-      <NavigateToLoginButton />
+      <Landing />
     </>
   )
 }
