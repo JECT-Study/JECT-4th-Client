@@ -13,12 +13,19 @@ export const tokens = {
       "gray-default": "#fafafa",
       "brand-default": "#fcf8ff",
       "gray-stronger": "#f2f2f2",
-      "brand-stronger": "#f3effa"
+      "brand-stronger": "#f3effa",
+      "neutral-default": "#fcf8ff",
+      "neutral-stronger": "#f3effa",
+      "dim-default": "#0d0d0d80"
     },
     "stroke": {
       "border-default": "#c8c5d0",
       "divider": "#c8c5d0",
-      "border-primary": "#e5e1ec"
+      "border-primary": "#e5e1ec",
+      "border-gray-default": "#e6e6e6",
+      "border-neutral-default": "#e5e1ec",
+      "border-neutral-stronger": "#c8c5d0",
+      "border-gray-stronger": "#cccccc"
     },
     "textAndIcon": {
       "default": "#121212",
@@ -347,7 +354,7 @@ export const tokens = {
           "body-sm": "14px",
           "body-md": "15px",
           "body-lg": "16px",
-          "body-xs": "14px",
+          "body-xs": "13px",
           "body-2xs": "13px",
           "label-lg": "15px",
           "label-sm": "13px",
