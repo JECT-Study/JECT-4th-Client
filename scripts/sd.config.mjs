@@ -13,7 +13,10 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { join, dirname } from 'path'
-import { transformFontWeight, transformDimension } from '@tokens-studio/sd-transforms'
+import {
+  transformFontWeight,
+  transformDimension,
+} from '@tokens-studio/sd-transforms'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
@@ -89,7 +92,9 @@ function px(val) {
 /** 폰트 굵기 이름을 CSS 숫자값으로 변환 (@tokens-studio/sd-transforms 사용) */
 function fontWeight(val) {
   const resolved = resolve(val)
-  return transformFontWeight({ value: resolved, type: 'fontWeight' }) ?? resolved
+  return (
+    transformFontWeight({ value: resolved, type: 'fontWeight' }) ?? resolved
+  )
 }
 
 /** 토큰 객체를 [cssKeySuffix, rawValue] 배열로 평탄화 */
@@ -160,7 +165,8 @@ function transformTokens(sem) {
   const opacity = {}
   for (const [k, v] of Object.entries(sem.opacity ?? {})) {
     const raw = resolveReference(v.value, tokenRoot)
-    opacity[k] = typeof raw === 'number' ? raw / 100 : parseFloat(String(raw)) / 100
+    opacity[k] =
+      typeof raw === 'number' ? raw / 100 : parseFloat(String(raw)) / 100
   }
 
   return { spacing, typo, radius, opacity }
@@ -169,7 +175,12 @@ function transformTokens(sem) {
 /** 복합 typography 토큰의 개별 프로퍼티 변환 */
 function resolveTypoProp(key, val) {
   const raw = resolveReference(val, textStyleRoot)
-  if (key === 'fontSize' || key === 'lineHeight' || key === 'paragraphSpacing' || key === 'paragraphIndent') {
+  if (
+    key === 'fontSize' ||
+    key === 'lineHeight' ||
+    key === 'paragraphSpacing' ||
+    key === 'paragraphIndent'
+  ) {
     return transformDimension({ value: raw, type: 'dimension' }) ?? raw
   }
   if (key === 'fontWeight') {
@@ -182,7 +193,12 @@ function resolveTypoProp(key, val) {
 function extractTextStyles(obj) {
   const result = {}
   for (const [k, v] of Object.entries(obj)) {
-    if (v && typeof v === 'object' && v.type === 'typography' && typeof v.value === 'object') {
+    if (
+      v &&
+      typeof v === 'object' &&
+      v.type === 'typography' &&
+      typeof v.value === 'object'
+    ) {
       const resolved = {}
       for (const [propKey, propVal] of Object.entries(v.value)) {
         resolved[propKey] = resolveTypoProp(propKey, propVal)
@@ -241,7 +257,9 @@ function genTypography(sem, indent = '  ') {
     }
     for (const [cat, variants] of Object.entries(typo.weight)) {
       for (const [variant, v] of Object.entries(variants)) {
-        lines.push(`${indent}--font-weight-${cat}-${variant}: ${fontWeight(v.value)};`)
+        lines.push(
+          `${indent}--font-weight-${cat}-${variant}: ${fontWeight(v.value)};`
+        )
       }
     }
   }
@@ -362,7 +380,6 @@ ${genResponsiveBlock(mobile, '(max-width: 767px)')}
 
 const outPath = join(root, 'src/app/styles/tokens.generated.css')
 writeFileSync(outPath, css, 'utf-8')
-console.log('✅ tokens.generated.css 생성 완료')
 
 // ── TypeScript Dictionary Output ───────────────────────────────────────────────
 
@@ -390,4 +407,3 @@ export type Tokens = typeof tokens
 
 const tsOutPath = join(root, 'src/shared/tokens/tokens.generated.ts')
 writeFileSync(tsOutPath, ts, 'utf-8')
-console.log('✅ tokens.generated.ts 생성 완료')

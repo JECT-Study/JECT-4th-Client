@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/sd.config.mjs",
+    "prebuild": "node scripts/sd.config.mjs",
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",

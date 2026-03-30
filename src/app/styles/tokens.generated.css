@@ -1,6 +1,7 @@
 /* 자동생성 파일 — 직접 편집하지 마세요. npm run build:tokens 로 재생성 */
 
 @theme {
+
   /* === Semantic Colors === */
   --color-brand-primary: #5a44f2;
   --color-brand-secondary: #0e2646;
@@ -11,9 +12,16 @@
   --color-background-brand-default: #fcf8ff;
   --color-background-gray-stronger: #f2f2f2;
   --color-background-brand-stronger: #f3effa;
+  --color-background-neutral-default: #fcf8ff;
+  --color-background-neutral-stronger: #f3effa;
+  --color-background-dim-default: #0d0d0d80;
   --color-stroke-border-default: #c8c5d0;
   --color-stroke-divider: #c8c5d0;
   --color-stroke-border-primary: #e5e1ec;
+  --color-stroke-border-gray-default: #e6e6e6;
+  --color-stroke-border-neutral-default: #e5e1ec;
+  --color-stroke-border-neutral-stronger: #c8c5d0;
+  --color-stroke-border-gray-stronger: #cccccc;
   --color-text-and-icon-default: #121212;
   --color-text-and-icon-primary: #3c3a43;
   --color-text-and-icon-tertiary: #787680;
@@ -23,6 +31,7 @@
   --color-feedback-success: #06a33c;
   --color-feedback-error: #fd565f;
   --color-feedback-informative: #0075ff;
+
 
   /* === Component Tokens === */
   --comp-button-primary-filled-filled-disabled: #e4dfff;
@@ -44,6 +53,7 @@
   --comp-button-secondary-filled-filled-pressed: #ffffff29;
   --comp-button-secondary-filled-filled-hover: #ffffff14;
 
+
   /* === Spacing — Named (Desktop default) === */
   --spacing-2xs: 12px;
   --spacing-xs: 16px;
@@ -53,6 +63,7 @@
   --spacing-lg: 28px;
   --spacing-2xl: 40px;
   --spacing-3xl: 48px;
+
 
   /* === Spacing — Unit Scale === */
   --spacing-0: 0;
@@ -77,9 +88,10 @@
   --spacing-80: 80px;
   --spacing-96: 96px;
 
+
   /* === Typography === */
-  --font-point: 'IBM Plex Sans KR';
-  --font-default: 'Noto Sans KR';
+  --font-point: "IBM Plex Sans KR";
+  --font-default: "Noto Sans KR";
   --font-weight-heading-thin: 500;
   --font-weight-heading-normal: 600;
   --font-weight-heading-bold: 700;
@@ -114,8 +126,8 @@
   --text-body-xs: 14px;
   --text-body-2xs: 13px;
   --text-label-lg: 16px;
-  --text-label-md: 15px;
   --text-label-sm: 13px;
+  --text-label-md: 15px;
   --text-label-xs: 12px;
   --leading-heading-sm: 32px;
   --leading-heading-md: 36px;
@@ -139,6 +151,7 @@
   --leading-label-md: 20px;
   --leading-label-xs: 16px;
 
+
   /* === Border Radius === */
   --radius-0: 0;
   --radius-2: 2px;
@@ -149,6 +162,7 @@
   --radius-12: 12px;
   --radius-16: 16px;
   --radius-24: 24px;
+
 
   /* === Opacity === */
   --opacity-0: 0;
@@ -165,6 +179,7 @@
   --opacity-76: 0.76;
   --opacity-91: 0.91;
   --opacity-100: 1;
+
 
   /* === Breakpoints === */
   --breakpoint-desktop: 1024px;
@@ -200,7 +215,10 @@
     --text-body-lg: 17px;
     --text-body-xs: 14px;
     --text-body-2xs: 13px;
-
+    --text-label-lg: 16px;
+    --text-label-sm: 13px;
+    --text-label-md: 14px;
+    --text-label-xs: 12px;
     --leading-heading-sm: 32px;
     --leading-heading-md: 36px;
     --leading-heading-lg: 44px;
@@ -274,8 +292,12 @@
     --text-body-sm: 14px;
     --text-body-md: 15px;
     --text-body-lg: 16px;
-    --text-body-xs: 14px;
+    --text-body-xs: 13px;
     --text-body-2xs: 13px;
+    --text-label-lg: 15px;
+    --text-label-sm: 13px;
+    --text-label-md: 14px;
+    --text-label-xs: 12px;
     --leading-heading-sm: 28px;
     --leading-heading-md: 32px;
     --leading-heading-lg: 36px;
