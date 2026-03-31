@@ -10,6 +10,8 @@ export function HeroMain() {
       <section
         className='relative h-[calc(100vh-var(--spacing-header-height))] w-full snap-start snap-always bg-cover bg-center bg-no-repeat'
         style={{ backgroundImage: `url(${swiper01.src})` }}>
+        <div className='left-30-white absolute top-40.5'>
+          <h3 className='text-display-sm leading-display-sm font-semibold'>
             인플루언서 선택, 감이 아닌
             <strong className='text-[#8B80FF]'> 데이터</strong>로
           </h3>
@@ -17,6 +19,7 @@ export function HeroMain() {
             color='primary'
             size='lg'
             style='filled'
+            className='mt-(--spacing-xl)'>
             무료로 시작하기
           </Button>
         </div>
@@ -25,11 +28,15 @@ export function HeroMain() {
       <section
         className='relative h-[calc(100vh-var(--spacing-header-height))] w-full snap-start snap-always bg-cover bg-center bg-no-repeat'
         style={{ backgroundImage: `url(${swiper02.src})` }}>
+        <div className='absolute top-40.5 left-30 text-white'>
+          <h3 className='text-display-sm leading-display-sm font-semibold'>
             진짜 영향력을 가진 인플루언서만,
             <strong className='text-[#8B80FF]'> 인플레이스</strong>
           </h3>
+          <p className='mt-(--spacing-2xl) text-title-lg leading-(--leading-title-lg) font-normal'>
             아직도 일일이 댓글 육안 검토하고 계신가요?
           </p>
+          <p className='mt-(--spacing-2xs) text-(length:--text-label-md) leading-body-sm font-normal text-(--color-stroke-border-primary)!'>
             카테고리·구독자·참여율로 딱 맞는 인플루언서를 30초 안에
             찾아드립니다.
             <br />
@@ -42,6 +49,7 @@ export function HeroMain() {
             size='lg'
             style='filled'
             leftIcon={<IconSearch />}
+            className='mt-(--spacing-xl)'>
             인플루언서 검색하기
           </Button>
         </div>
