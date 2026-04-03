@@ -90,7 +90,13 @@ function ToggleGroupItem({
               ? 'h-[var(--spacing-md)] w-[var(--spacing-md)]'
               : 'flex h-[var(--spacing-xs)] w-[var(--spacing-xs)]'
           )}>
-          <Image src={imgSrc} alt={imgAlt} fill className='object-contain' />
+          <Image
+            src={imgSrc}
+            alt={imgAlt}
+            fill
+            sizes={resolvedSize === 'lg' ? '24px' : '16px'}
+            className='object-contain'
+          />
         </div>
       )}
       {children}
