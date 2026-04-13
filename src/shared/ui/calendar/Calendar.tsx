@@ -231,7 +231,7 @@ function Calendar({
               {onConfirm && (
                 <div className='absolute right-0 bottom-0 left-0 flex justify-end px-24 pb-24'>
                   <ConfirmButton
-                    style={'filled'}
+                    variant={'filled'}
                     color='secondary'
                     size={'xs'}
                     disabled={confirmDisabled}
