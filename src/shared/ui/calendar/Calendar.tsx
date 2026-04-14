@@ -18,7 +18,7 @@ import IconLeftArrow from './assets/leftwards-triangle-bold.svg?react'
 import IconRightArrow from './assets/rightwards-triangle-bold.svg?react'
 
 function formatDate(date: Date) {
-  return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`
+  return `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`
 }
 
 function CalendarRangePicker({ label = '기간' }: { label?: string }) {
@@ -124,7 +124,6 @@ function Calendar({
         formatMonthDropdown: (date) =>
           date.toLocaleString(locale?.code, {
             month: 'short',
-            weekday: 'long',
           }),
         formatWeekdayName: (date) =>
           date.toLocaleString('ko-KR', { weekday: 'short' }),
@@ -192,7 +191,6 @@ function Calendar({
         ),
         day: cn(
           'group/day relative aspect-square h-full w-full cursor-pointer! rounded-(--cell-radius) p-0 text-center [&:last-child[data-selected=true]_button]:rounded-r-(--cell-radius)',
-          props.showWeekNumber ? '' : '',
           defaultClassNames.day
         ),
         range_start: cn(
@@ -307,7 +305,6 @@ function CalendarDayButton({
       ref={ref}
       variant='ghost'
       size='icon'
-      style={{ cursor: 'pointer' }}
       data-day={day.date.toLocaleDateString(locale?.code)}
       data-selected-single={
         modifiers.selected &&
