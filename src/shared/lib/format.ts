@@ -1,5 +1,16 @@
 /* 숫자 포맷팅 */
 
+// 만 단위 포맷팅 37,687,938 => 3768만 7938 / 83,904 => 8만 3904 / 187 => 187
+export function formatKoreanUnit(value: number): string {
+  const floor = Math.floor(value)
+  if (floor >= 10000) {
+    const man = Math.floor(floor / 10000)
+    const remainder = floor % 10000
+    return remainder > 0 ? `${man}만 ${remainder}` : `${man}만`
+  }
+  return String(floor)
+}
+
 // 1000명 단위 포맷팅 3,700 => 3천
 export function formatThousands(count: number): string {
   if (count >= 1000) {
